@@ -25,18 +25,18 @@ void init(ram** rams, int* N)
 	{
 		printf("Input name: ");
 		scanf("%127s", buffer);
-		*rams[i]->brand = (char*)malloc(strlen(buffer) + 1);
-		strcpy(rams[i]->brand, buffer);
+		*(*rams + i)->brand = (char*)malloc(strlen(buffer) + 1);
+		strcpy((*rams)[i].brand, buffer);
 		printf("size: ");
-		scanf_s("%d", &rams[i]->size);
+		scanf_s("%d", &(*rams)[i].size);
 		printf("type: ");
 		scanf("%127s", buffer);
-		*rams[i]->type = (char*)malloc(strlen(buffer) + 1);
-		strcpy(rams[i]->type, buffer);
+		*(*rams + i)->type = (char*)malloc(strlen(buffer) + 1);
+		strcpy((*rams)[i].type, buffer);
 		printf("frequency: ");
-		scanf_s("%d", &rams[i]->frequency);
+		scanf_s("%d", &(*rams)[i].frequency);
 		printf("voltage: ");
-		scanf_s("%f", &rams[i]->voltage);
+		scanf_s("%f", &(*rams)[i].voltage);
 	}
 }
 
@@ -44,7 +44,7 @@ void print(ram* rams, int* N)
 {
 	for (int i = 0; i < *N; i++)
 	{
-		printf("%s\t%d\t%s\t%dMHz\t%.2fV\n", 
+		printf("%10s%10d%10s\t%5dMHz\t%.2fV\n", 
 			rams[i].brand, rams[i].size, rams[i].type, rams[i].frequency, rams[i].voltage);
 	}
 }
