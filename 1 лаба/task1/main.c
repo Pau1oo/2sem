@@ -8,7 +8,27 @@ int main()
 {
 	int N; ram* rams = NULL;
 
-	inputSize(&N);
-	init(&rams, &N);
-	print(rams, &N);
+    inputSize(&N);
+    init(&rams, &N);
+
+    while (1)
+    {
+        int choice;
+        printf("||||||||||||||||\n");
+        printf("|| [1] Print  ||\n|| [2] Add    ||\n|| [3] Delete ||\n|| [4] Sort   ||\n|| [0] Exit   ||\n");
+        printf("||||||||||||||||\n");
+        while (!scanf("%d", &choice) || choice > 4 || choice < 0 || getchar() != '\n')
+        {
+            printf("Wrong input! Enter again: ");
+            rewind(stdin);
+        }
+
+        if (choice == 0) return 1;
+        else if (choice == 1) print(rams, &N);
+        else if (choice == 2) add(&rams, &N);
+        else if (choice == 3) return 1;
+        else if (choice == 4) return 1;
+
+        printf("\n");
+    }
 }
