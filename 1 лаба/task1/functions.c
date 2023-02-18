@@ -19,7 +19,7 @@ int inputSize(int* N)
 
 void init(ram** rams, int* N)
 {
-	char buffer[128];
+	char* buffer = malloc(128);
 	*rams = (ram*)malloc(*N * sizeof(ram));
 
 	for (int i = 0; i < *N; i++)
@@ -72,7 +72,7 @@ void print(ram* rams, int* N)
 void add(ram** rams, int* N)
 {
 	(*N)++;
-	char buffer[128];
+	char* buffer = malloc(128);
 	*rams = (ram*)realloc(*rams, (*N) * sizeof(ram));
 	int i = (*N) - 1;
 
@@ -108,5 +108,26 @@ void add(ram** rams, int* N)
 		printf("Invalid input!\n");
 		rewind(stdin);
 		printf("voltage(e.g. 1.3): ");
+	}
+}
+
+void delete(ram* rams, int* N) 
+{
+	char* name = malloc(0);
+	printf("Input name: ");
+	rewind(stdin);
+	gets(name);
+
+	for (int i = 0; i < *N; i++)
+	{
+		if (!strcmp(rams[i].brand, name)) 
+		{
+			for (int j = i; j < *N - 1; j++) 
+			{
+				rams[j] = rams[j + 1];
+			}
+			(*N)--;
+			break;
+		}
 	}
 }

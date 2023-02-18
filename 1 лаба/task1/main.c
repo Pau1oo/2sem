@@ -19,14 +19,15 @@ int main()
         printf("\n");
         while (!scanf("%d", &choice) || choice > 4 || choice < 0 || getchar() != '\n')
         {
-            printf("Wrong input! Enter again: ");
+            printf("Wrong input!\n");
+            printf("Enter again: ");
             rewind(stdin);
         }
 
         if (choice == 0) return 1;
         else if (choice == 1) print(rams, &N);
         else if (choice == 2) add(&rams, &N);
-        else if (choice == 3) return 1;
+        else if (choice == 3) delete(rams, &N);
         else if (choice == 4) return 1;
 
         printf("\n");

@@ -14,3 +14,5 @@ int inputSize(int* N);
 void print(ram* rams, int* N);
 
 void add(ram** rams, int* N);
+
+void delete(ram* rams, int* N);
