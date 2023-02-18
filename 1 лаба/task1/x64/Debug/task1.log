@@ -1,1 +1,7 @@
-﻿  task1.vcxproj -> C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\x64\Debug\task1.exe
+﻿  functions.c
+C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\functions.c(29,58): warning C4047: =: "char" отличается по уровням косвенного обращения от "char *"
+C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\functions.c(42,57): warning C4047: =: "char" отличается по уровням косвенного обращения от "char *"
+C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\functions.c(81,57): warning C4047: =: "char" отличается по уровням косвенного обращения от "char *"
+C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\functions.c(94,56): warning C4047: =: "char" отличается по уровням косвенного обращения от "char *"
+C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\functions.c(119,2): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+  task1.vcxproj -> C:\Users\bukat\Desktop\~\ОАиП\2sem\1 лаба\task1\x64\Debug\task1.exe

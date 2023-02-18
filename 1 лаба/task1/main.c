@@ -28,7 +28,7 @@ int main()
         else if (choice == 1) print(rams, &N);
         else if (choice == 2) add(&rams, &N);
         else if (choice == 3) delete(rams, &N);
-        else if (choice == 4) return 1;
+        else if (choice == 4) sort(rams, N);
 
         printf("\n");
     }

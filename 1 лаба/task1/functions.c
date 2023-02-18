@@ -131,3 +131,50 @@ void delete(ram* rams, int* N)
 		}
 	}
 }
+
+int comp_name(ram* a, ram* b) 
+{
+	return strcmp(a->brand, b->brand);
+}
+
+int comp_size(ram* a, ram* b) 
+{
+	return (a->size > b->size) - (a->size < b->size);
+}
+
+int comp_type(ram* a, ram* b) {
+	return strcmp(a->type, b->type);
+}
+
+int comp_frequency(ram* a, ram* b)
+{
+	return (a->frequency > b->frequency) - (a->frequency < b->frequency);
+}
+
+int comp_voltage(ram* a, ram* b)
+{
+	return (a->voltage > b->voltage) - (a->voltage < b->voltage);
+}
+
+void sort(ram* rams, int N) 
+{
+	printf("\n");
+	printf(" | [1] Name      | \n | [2] Size      | \n | [3] Type      | \n | [4] Frequency | \n | [5] Voltage   | \n | [0] Exit      | \n");
+	printf("\n");
+
+	int choice;
+	printf("Choose an option to sort by: ");
+	while (!scanf("%d", &choice) || choice > 6 || choice < 0 || getchar() != '\n') 
+	{
+		printf("Invalid input!");
+		rewind(stdin);
+		printf("Choose an option to sort by: ");
+	}
+
+	if (choice == 0) return;
+	if (choice == 1) qsort(rams, N, sizeof(ram), (int (*)(const void*, const void*)) comp_name);
+	if (choice == 2) qsort(rams, N, sizeof(ram), (int (*)(const void*, const void*)) comp_size);
+	if (choice == 3) qsort(rams, N, sizeof(ram), (int (*)(const void*, const void*)) comp_type);
+	if (choice == 4) qsort(rams, N, sizeof(ram), (int (*)(const void*, const void*)) comp_frequency);
+	if (choice == 5) qsort(rams, N, sizeof(ram), (int (*)(const void*, const void*)) comp_voltage);
+}
