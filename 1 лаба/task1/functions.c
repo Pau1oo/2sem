@@ -166,7 +166,7 @@ void sort(ram* rams, int N)
 	printf("Choose an option to sort by: ");
 	while (!scanf("%d", &choice) || choice > 6 || choice < 0 || getchar() != '\n') 
 	{
-		printf("Invalid input!");
+		printf("Invalid input!\n");
 		rewind(stdin);
 		printf("Choose an option to sort by: ");
 	}
