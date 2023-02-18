@@ -14,9 +14,9 @@ int main()
     while (1)
     {
         int choice;
-        printf("||||||||||||||||\n");
-        printf("|| [1] Print  ||\n|| [2] Add    ||\n|| [3] Delete ||\n|| [4] Sort   ||\n|| [0] Exit   ||\n");
-        printf("||||||||||||||||\n");
+        printf("\n");
+        printf(" | [1] Print  | \n | [2] Add    | \n | [3] Delete | \n | [4] Sort   | \n | [0] Exit   | \n");
+        printf("\n");
         while (!scanf("%d", &choice) || choice > 4 || choice < 0 || getchar() != '\n')
         {
             printf("Wrong input! Enter again: ");

@@ -8,10 +8,11 @@
 int inputSize(int* N)
 {
 	printf("Input number of ram: ");
-	while (!scanf_s("%d", N) || *N < 0 || getchar() != '\n')
+	while (!scanf_s("%d", N) || *N <= 0 || getchar() != '\n')
 	{
-		printf("Invalid input! Try again: ");
+		printf("Invalid input!\n");
 		rewind(stdin);
+		printf("Input number of ram: ");
 	}
 	return *N;
 }
@@ -27,16 +28,35 @@ void init(ram** rams, int* N)
 		scanf("%127s", buffer);
 		*(*rams + i)->brand = (char*)malloc(strlen(buffer) + 1);
 		strcpy((*rams)[i].brand, buffer);
-		printf("size: ");
-		scanf_s("%d", &(*rams)[i].size);
-		printf("type: ");
+
+		printf("size(e.g. 8): ");
+		while (!scanf_s("%d", &(*rams)[i].size) || (*rams)[i].size <= 0 || getchar() != '\n')
+		{
+			printf("Invalid input!\n");
+			rewind(stdin);
+			printf("size(e.g. 8): ");
+		}
+
+		printf("type(e.g. DDR4): ");
 		scanf("%127s", buffer);
 		*(*rams + i)->type = (char*)malloc(strlen(buffer) + 1);
 		strcpy((*rams)[i].type, buffer);
-		printf("frequency: ");
-		scanf_s("%d", &(*rams)[i].frequency);
-		printf("voltage: ");
-		scanf_s("%f", &(*rams)[i].voltage);
+
+		printf("frequency(e.g. 3200): ");
+		while (!scanf_s("%d", &(*rams)[i].frequency) || (*rams)[i].frequency <= 0 || getchar() != '\n')
+		{
+			printf("Invalid input!\n");
+			rewind(stdin);
+			printf("frequency(e.g. 3200): ");
+		}
+
+		printf("voltage(e.g. 1.3): ");
+		while (!scanf_s("%f", &(*rams)[i].voltage) || (*rams)[i].voltage <= 0 || getchar() != '\n')
+		{
+			printf("Invalid input!\n");
+			rewind(stdin);
+			printf("voltage(e.g. 1.3): ");
+		}
 	}
 }
 
@@ -60,14 +80,33 @@ void add(ram** rams, int* N)
 	scanf("%127s", buffer);
 	*(*rams + i)->brand = (char*)malloc(strlen(buffer) + 1);
 	strcpy((*rams)[i].brand, buffer);
-	printf("size: ");
-	scanf_s("%d", &(*rams)[i].size);
-	printf("type: ");
+
+	printf("size(e.g. 8): ");
+	while (!scanf_s("%d", &(*rams)[i].size) || (*rams)[i].size <= 0 || getchar() != '\n')
+	{
+		printf("Invalid input!\n");
+		rewind(stdin);
+		printf("size(e.g. 8): ");
+	}
+
+	printf("type(e.g. DDR4): ");
 	scanf("%127s", buffer);
 	*(*rams + i)->type = (char*)malloc(strlen(buffer) + 1);
 	strcpy((*rams)[i].type, buffer);
-	printf("frequency: ");
-	scanf_s("%d", &(*rams)[i].frequency);
-	printf("voltage: ");
-	scanf_s("%f", &(*rams)[i].voltage);
+
+	printf("frequency(e.g. 3200): ");
+	while (!scanf_s("%d", &(*rams)[i].frequency) || (*rams)[i].frequency <= 0 || getchar() != '\n')
+	{
+		printf("Invalid input!\n");
+		rewind(stdin);
+		printf("frequency(e.g. 3200): ");
+	}
+
+	printf("voltage(e.g. 1.3): ");
+	while (!scanf_s("%f", &(*rams)[i].voltage) || (*rams)[i].voltage <= 0 || getchar() != '\n')
+	{
+		printf("Invalid input!\n");
+		rewind(stdin);
+		printf("voltage(e.g. 1.3): ");
+	}
 }
