@@ -6,7 +6,7 @@
 
 int main()
 {
-	int N; ram* rams = NULL;
+	int N; ram* rams = malloc(0);
 
     inputSize(&N);
     init(&rams, &N);
