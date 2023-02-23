@@ -1,11 +1,16 @@
 typedef struct
 {
-	char brand[50];
+	char* brand;
 	int size;
-	char type[10];
+	char* type;
 	int frequency;
 	float voltage;
 } ram;
+
+enum
+{
+	
+};
 
 void init(ram** rams, int* N);
 
@@ -15,6 +20,6 @@ void print(ram* rams, int* N);
 
 void add(ram** rams, int* N);
 
-void delete(ram* rams, int* N);
+void delete(ram** rams, int* N);
 
 void sort(ram* rams, int N);

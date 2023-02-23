@@ -26,7 +26,7 @@ void init(ram** rams, int* N)
 	{
 		printf("Input name: ");
 		scanf("%127s", buffer);
-		*(*rams + i)->brand = (char*)malloc(strlen(buffer) + 1);
+		(*rams)[i].brand = (char*)malloc(strlen(buffer) + 1);
 		strcpy((*rams)[i].brand, buffer);
 
 		printf("size(e.g. 8): ");
@@ -39,7 +39,7 @@ void init(ram** rams, int* N)
 
 		printf("type(e.g. DDR4): ");
 		scanf("%127s", buffer);
-		*(*rams + i)->type = (char*)malloc(strlen(buffer) + 1);
+		(*rams)[i].type = (char*)malloc(strlen(buffer) + 1);
 		strcpy((*rams)[i].type, buffer);
 
 		printf("frequency(e.g. 3200): ");
@@ -78,7 +78,7 @@ void add(ram** rams, int* N)
 
 	printf("Input name: ");
 	scanf("%127s", buffer);
-	*(*rams + i)->brand = (char*)malloc(strlen(buffer) + 1);
+	(*rams)[i].brand = (char*)malloc(strlen(buffer) + 1);
 	strcpy((*rams)[i].brand, buffer);
 
 	printf("size(e.g. 8): ");
@@ -91,7 +91,7 @@ void add(ram** rams, int* N)
 
 	printf("type(e.g. DDR4): ");
 	scanf("%127s", buffer);
-	*(*rams + i)->type = (char*)malloc(strlen(buffer) + 1);
+	(*rams)[i].type = (char*)malloc(strlen(buffer) + 1);
 	strcpy((*rams)[i].type, buffer);
 
 	printf("frequency(e.g. 3200): ");
@@ -111,7 +111,7 @@ void add(ram** rams, int* N)
 	}
 }
 
-void delete(ram* rams, int* N) 
+void delete(ram** rams, int* N) 
 {
 	char* name = malloc(0);
 	printf("Input name: ");
@@ -120,13 +120,16 @@ void delete(ram* rams, int* N)
 
 	for (int i = 0; i < *N; i++)
 	{
-		if (!strcmp(rams[i].brand, name)) 
+		if (strcmp((*rams)[i].brand, name) == 0)
 		{
+			free((*rams)[i].brand);
+
 			for (int j = i; j < *N - 1; j++) 
 			{
-				rams[j] = rams[j + 1];
+				(*rams)[j] = (*rams)[j + 1];
 			}
 			(*N)--;
+			*rams = (ram*)realloc(*rams, (*N) * sizeof(ram));
 			break;
 		}
 	}

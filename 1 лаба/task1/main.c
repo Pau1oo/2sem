@@ -24,13 +24,18 @@ int main()
             rewind(stdin);
         }
 
-        if (choice == 0) return 1;
+        if (choice == 0) 
+            return 1;
+
         else if 
             (choice == 1) print(rams, &N);
+
         else if 
             (choice == 2) add(&rams, &N);
+
         else if 
-            (choice == 3) delete(rams, &N);
+            (choice == 3) delete(&rams, &N);
+
         else if 
             (choice == 4) sort(rams, N);
 
