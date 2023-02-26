@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\bukat\Desktop\~\ОАиП\2sem\2 лаба\task\main.c(18,3): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+  task.vcxproj -> C:\Users\bukat\Desktop\~\ОАиП\2sem\2 лаба\task\x64\Debug\task.exe
