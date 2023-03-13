@@ -1,0 +1,4 @@
+# ninja log v5
+1	78	7004096873015574	CMakeFiles/compressor.dir/main.c.obj	73f4b50976a537ef
+6	104	7004096326280315	CMakeFiles/compressor.dir/functions.c.obj	30989185b30f6077
+78	154	7004096873725740	compressor.exe	3e4b65f07ddaca8
